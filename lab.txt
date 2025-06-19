@@ -1,0 +1,74 @@
+for report u need to take notes here and add more things every week. written in overleaf. 
+
+*introduction---> by the end of the week(10th sept)
+    in LaTeX and will be peer reviewed, to be uploaded in canvas. MAX one page, but less is better
+    must be in pdf
+
+    things to add in the introduction
+        !!!!!-what is matter and anti matter particle, how are they made etc. how to acces information,
+         how to study this assymetry!!!!
+        -the elementary particals of the standard model of everything we see around us. they are called elementary
+         because they do not have any internal structure, they are cathegorised in different groups(check up the elementary 
+         particles of SM picture) --> 6 quarks(12 if u add the anti quarks, works for every type of particle),
+         6 leptons, 4 gauge bosons(via photons).
+        - a proton consists of 3 quartks
+        -everythiing has a fractional charge
+        -all particles around us are made of u(up), d(down), e(electron)(leptons, they are also 6)
+        -quark model introduced by Gell-Mann and zweig(1964)
+        -forming composite particles--> mesons and baryons
+        -probing these: with a model, Pythia, in our case.
+        -Kinematics
+            -the z axis is horizontally
+            -every particle has its own momentul, and the momentum will have its own x y and z components
+            -from those 3 numbers we can calculate stuff, such as total mometun, transverse momentul
+             and the pseudo-rapidity(formulas can be found on the power point presentation)
+            -
+
+
+        IN CASE OVERLEAF DOESN T GET SAVED: check one note
+
+        sources:
+        https://home.cern/science/physics/antimatter
+        https://home.cern/science/physics/matter-antimatter-asymmetry-problem
+
+
+for the code also add: 
+- statistical uncertainty(sqrt)
+-poisson distribution(central value of the distribution and uncertainty are needed)
+-variance(mean standard deviation)
+significance (compare the difference based on the uncertainty)
+-no of pions and antipions
+
+
+*analysis details
+*results
+*conclusion
+
+
+ne bagam unde vrem?
+facem in overleaf sau in LaTeX?
+stiu, nu vreau in grupa 5 deloc
+
+
+
+a= [1 2 3 ]
+a[0]
+list= [[122], [123]]
+
+on top of introduction add analysis details :
+include anything important for people who read my report, from the analysis point of view.
+ what we analysed, how many events, what the variables are
+describe what u do. in overleaf. inlude the output of the lab2.
+
+
+calculate the average of particles- the average of antiparticles
+
+"does pythia produce more particles then antiparticles"
+hypothesis: pythia produces the same amount of particles and antiparticles"
+has to be in duscussion, as part of the result section"- based on difference between them and corresponding uncertainties
+basing it on how far it is from 0(check distance from 0, how many sigmas away i am
+ away from 0. if it s more then 3 sigma waves over 0,
+then the result is significantly non 0)?
+in sigma waves? wether the pions are significant, everything has to do 
+with the uncertainty difference. statistic uncertainty. also change the previous parts.
+difference is calculated with the average number of particles/antiparticles per file
