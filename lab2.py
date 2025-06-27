@@ -1,5 +1,6 @@
 import math             #library used for pow(good for squares and logs)
-
+import matplotlib.pyplot as plt
+import numpy as np
 threshold = 0.05
 
 def calculate_p( py, px, pz):
@@ -64,37 +65,34 @@ contor_negative = 0
 event_counter = 0 
 current_event_id = event_id
 
-for i in range(len(lines_list)):            #going through every list (line) in the main list of particles. 
-    
-    if len(lines_list[i])==2:       # if the current line has exactly two elements, it indicates a new event.
-        
-        # Add the count of positive and negative particles from the previous event 
-        # to the running total across all events.
+
+positive_per_event = []
+negative_per_event = []
+
+for i in range(len(lines_list)):
+    if len(lines_list[i]) == 2:
+        # Store the counts for the previous event (skip for the very first event)
+        if event_counter > 0:
+            positive_per_event.append(contor_positive)
+            negative_per_event.append(contor_negative)
         total_contor_positive += contor_positive
         total_contor_negative += contor_negative
-            
-        #starts a new event
         event_id, num_particles = map(int, lines_list[i])
         current_event_id = event_id
         event_counter += 1
-        
-        #reset the per event counters
-        contor_positive=0
-        contor_negative=0
-        
-        
-    if len(lines_list[i])==4:           # If the current line contains four elements, it represents particle data for the event.
-        #print ("for particle ", i+1 )
-        px, py, pz, pdg_code = map(float, lines_list[i])        #giving each one of the 4 compoents in the list a name and making them from string to float
-        #print("entered line 77")
+        contor_positive = 0
+        contor_negative = 0
+    if len(lines_list[i]) == 4:
+        px, py, pz, pdg_code = map(float, lines_list[i])
         particle_type = check_type(pdg_code)
-        # Determine the type of the particle using the pdg_code. The function check_type
-        # returns 1 for a positive particle and -1 for a negative particle.
         if particle_type == 1:
             contor_positive += 1
         elif particle_type == -1:
             contor_negative += 1
-    
+
+# After the loop, append the last event's counts
+positive_per_event.append(contor_positive)
+negative_per_event.append(contor_negative)
     
 # fter the loop, print the results of the last event
 #print(f"In event {current_event_id}, we had {contor_positive} positive particles and {contor_negative} negative particles.")
@@ -131,4 +129,25 @@ if significance> threshold:
     print("the significance is very large compared to the threshold")
 else:
     print("the significance is not larger then the threshold")
-    
+
+
+# Aggregate sums per 1000 events
+batch_size = 1000
+batch_positive = []
+batch_negative = []
+
+for i in range(0, len(positive_per_event), batch_size):
+    batch_positive.append(sum(positive_per_event[i:i+batch_size]))
+    batch_negative.append(sum(negative_per_event[i:i+batch_size]))
+
+x = [i * batch_size for i in range(len(batch_positive))]
+
+plt.figure(figsize=(10, 6))
+plt.plot(x, batch_positive, label='Positive pions per 1000 events', color='blue', linewidth=1)
+plt.plot(x, batch_negative, label='Negative pions per 1000 events', color='red', linewidth=1)
+plt.xlabel('Event number')
+plt.ylabel('Number of pions in 1000 events')
+plt.title('Positive and Negative Pions per 1000 Events')
+plt.legend()
+plt.tight_layout()
+plt.show()

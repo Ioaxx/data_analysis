@@ -103,16 +103,16 @@ def process_file(file_path):
 
 # Paths
 file_paths = [
-    "./DataFiles/output-Set1.txt",
-    "./DataFiles/output-Set2.txt",
-    "./DataFiles/output-Set3.txt",
-    "./DataFiles/output-Set4.txt",
-    "./DataFiles/output-Set5.txt",
-    "./DataFiles/output-Set6.txt",
-    "./DataFiles/output-Set7.txt",
-    "./DataFiles/output-Set8.txt",
-    "./DataFiles/output-Set9.txt",
-    "./DataFiles/output-Set10.txt"
+    "./Datafiles/DataFiles/output-Set1.txt",
+    "./DataFiles/DataFiles/output-Set2.txt",
+    "./DataFiles/DataFiles/output-Set3.txt",
+    "./DataFiles/DataFiles/output-Set4.txt",
+    "./DataFiles/DataFiles/output-Set5.txt",
+    "./DataFiles/DataFiles/output-Set6.txt",
+    "./DataFiles/DataFiles/output-Set7.txt",
+    "./DataFiles/DataFiles/output-Set8.txt",
+    "./DataFiles/DataFiles/output-Set9.txt",
+    "./DataFiles/DataFiles/output-Set10.txt"
 ]
 
 # Run in parallel
