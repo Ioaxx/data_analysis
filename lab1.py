@@ -26,10 +26,6 @@ def check_type (pdg_code):
     else: 
         print("this is not a pion of any kind")
 
-#i used my path for the input file, but if someone else wants to run this, they have to copy their own path
-print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-print("Hello! if you are peer reviewing this code, please remember to change the path of the input file")
-print("you can just go to your file, click right, and copy path, then paste it.")
 
 
 
